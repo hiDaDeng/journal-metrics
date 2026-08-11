@@ -1,6 +1,6 @@
 # journal-metrics
 
-[English](./README.md) | [中文](./README-zh.md)
+[English](./README-EN.md) | [中文](./README.md)
 
 **期刊指标**
 
