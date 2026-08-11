@@ -1,0 +1,4 @@
+interface:
+  display_name: "Journal Metrics"
+  short_description: "查 JIF、分区、索引等信息"
+  default_prompt: "使用 $journal-metrics 查询这本期刊的 JIF、JCR 分区、收录索引等信息。"
