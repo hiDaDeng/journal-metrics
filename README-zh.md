@@ -17,7 +17,7 @@
 在 agent 对话框（Codex、OpenCode、Claude Code、Kimi Code 等）中执行命令：
 
 ```text
-安装 hiDaDeng/journal-metrics。
+安装 GitHub 仓库 hiDaDeng/journal-metrics
 ```
 
 ## 使用
