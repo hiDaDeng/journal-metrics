@@ -2,64 +2,64 @@
 
 [English](./README.md) | [中文](./README-zh.md)
 
-**Journal Metrics**
+**期刊指标**
 
-Journal selection often gets messy because metrics from different sources are mixed together, missing fields are guessed, and changing publisher details are treated as if they came from JCR.
+选刊指标很容易变乱：不同来源的分区和周期被混在一起，缺失字段被猜测补齐，出版集团页面上的信息也常被误当成 JCR 口径。
 
-`journal-metrics` is a local agent skill for clean, source-bounded journal lookups. It queries bundled SQLite indexes and returns a compact table covering JIF, JCR quartiles, indexing, DOAJ records, and selected publisher submission metrics without inventing missing values.
+`journal-metrics` 是一个面向智能体的本地期刊查询技能。它通过打包的 SQLite 索引返回干净、紧凑、来源边界清楚的总表，覆盖 JIF、JCR 分区、收录索引、DOAJ 信息，以及部分出版集团投稿指标，不自行补写缺失值。
 
 ![](journal-metrics.svg)
 
-## Features
+## 特性
 
-- Query multiple local SQLite indexes through one entrypoint.
-- Return a compact table focused on the fields most relevant to journal selection.
-- Keep source boundaries explicit instead of filling missing fields by guesswork.
+- 通过一个入口查询多个本地 SQLite 索引。
+- 返回一个紧凑总表，优先展示最影响选刊判断的字段。
+- 保持不同来源的边界，不用猜测补齐缺失字段。
 
-## Installation
+## 安装
 
-In an agent chat window (Codex, OpenCode, Claude Code, Kimi Code, etc.), run the following command:
+在 agent 对话框（Codex、OpenCode、Claude Code、Kimi Code 等）中执行命令：
 
 ```text
-Install GitHub repo hiDaDeng/journal-metrics.
+安装 GitHub 仓库 hiDaDeng/journal-metrics
 ```
 
-## Usage
+## 使用
 
-Typical agent prompt:
+在智能体对话中，常见调用方式如下：
 
 ```text
 $journal-metrics Computers in Human Behavior
 ```
 
-Direct command-line usage:
+命令行直接查询：
 
 ```bash
 python3 scripts/query.py "Computers in Human Behavior"
 python3 scripts/query.py "Computers in Human Behavior" --json
 ```
 
-## Output
+## 返回结果
 
-The default response is a single summary table, usually including:
+默认输出为一个连续总表，通常包含：
 
-- Journal and ISSN
+- 期刊名与 ISSN
 - JIF
 - JCR Quartile
 - 2026 新锐分区
-- Indexing (`SCI` / `SCIE` / `SSCI` / `ESCI` / `AHCI`)
+- 收录索引（`SCI` / `SCIE` / `SSCI` / `ESCI` / `AHCI`）
 - JCR Categories
-- Ranking, if locally available
-- DOAJ fields, if matched
-- Publisher metrics, if matched
+- 排名（如本地库可用）
+- DOAJ 字段（如命中）
+- 出版集团指标（如命中）
 
-Status handling:
+状态处理规则：
 
-- `found`: return the result directly
-- `ambiguous`: return candidates and wait for a narrower journal identity
-- `not_found`: auto-apply suggestion #1 when available; otherwise report that local data is unavailable
+- `found`：直接返回结果
+- `ambiguous`：返回候选期刊并等待进一步指定
+- `not_found`：有候选时默认自动采用第 1 条；否则返回本地数据未收录
 
-## Project Structure
+## 项目结构
 
 ```text
 journal-metrics/
@@ -83,51 +83,54 @@ journal-metrics/
         └── frontiers.sqlite
 ```
 
-## File Guide
+## 文件说明
 
 - `SKILL.md`  
-  Core operating instructions for the skill.
+  技能主说明，定义智能体的执行规则。
 
 - `README.md`  
-  English project overview.
+  英文版项目说明。
 
 - `README-zh.md`  
-  Chinese project overview.
+  中文版项目说明。
 
 - `agents/openai.yaml`  
-  UI metadata for display name, short description, and default prompt.
+  界面名称、简介与默认提示词等元数据。
 
 - `scripts/query.py`  
-  Main query entrypoint for lookup, aggregation, and output formatting.
+  主查询入口，负责检索、聚合与输出格式化。
 
 - `scripts/build_index.py`  
-  Builds `journal-metrics.sqlite` from local JCR workbooks and the 2026 emerging-quartile workbook.
+  用本地 JCR 工作簿和 2026 新锐分区工作簿构建 `journal-metrics.sqlite`。
 
 - `scripts/build_doaj.py`  
-  Builds `doaj.sqlite` from an official DOAJ CSV snapshot.
+  用 DOAJ 官方 CSV 快照构建 `doaj.sqlite`。
 
 - `scripts/sync_wiley.py`  
-  Syncs public Wiley directory metrics.
+  同步 Wiley 公开目录指标。
 
 - `scripts/sync_frontiers.py`  
-  Syncs public Frontiers directory metrics.
+  同步 Frontiers 公开目录指标。
 
 - `scripts/sync_publishers.py`  
-  Batch sync entrypoint for supported publisher datasets.
+  当前支持出版集团数据的批量同步入口。
 
 - `assets/journal-metrics.sqlite`  
-  Main lookup database built from local JCR and emerging-quartile source tables.
+  主查询库，来源于本地整理后的 JCR 与新锐分区源表。
+
+- `assets/DOAJ_journalcsv_20260711_2320_utf8.csv`  
+  DOAJ 原始快照文件。
 
 - `assets/doaj.sqlite`  
-  Fast lookup database generated from the DOAJ CSV snapshot.
+  由 DOAJ CSV 快照构建的快速查询库。
 
 - `assets/publishers/wiley.sqlite`  
-  Generated from public Wiley directory data.
+  由 Wiley 公开目录数据整理生成。
 
 - `assets/publishers/frontiers.sqlite`  
-  Generated from public Frontiers directory data.
+  由 Frontiers 公开目录数据整理生成。
 
-## Notes
+## 说明
 
-- The repository is still under active construction.
-- Please re-check critical details before submission.
+- 仓库仍在建设中。
+- 投稿前请再次核对关键信息。
