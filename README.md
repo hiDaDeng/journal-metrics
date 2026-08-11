@@ -74,7 +74,6 @@ journal-metrics/
 └── assets/
     ├── journal-metrics.sqlite
     ├── doaj.sqlite
-    ├── DOAJ_journalcsv_20260711_2320_utf8.csv
     └── publishers/
         ├── wiley.sqlite
         └── frontiers.sqlite
