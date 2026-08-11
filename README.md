@@ -17,7 +17,7 @@ A local agent skill for concise journal lookups across JIF, JCR quartiles, index
 In an agent chat window (Codex, OpenCode, Claude Code, Kimi Code, etc.), run the following command:
 
 ```text
-Please install https://github.com/hiDaDeng/journal-metrics for me.
+Install hiDaDeng/journal-metrics.
 ```
 
 ## Usage

@@ -14,10 +14,10 @@
 
 ## 安装
 
-在 agent 对话框（Codex、OpenCode、Claude Code、Kimi Code 等）中直接告诉 agent：
+在 agent 对话框（Codex、OpenCode、Claude Code、Kimi Code 等）中执行命令：
 
 ```text
-请帮我安装 https://github.com/hiDaDeng/journal-metrics 。
+安装 hiDaDeng/journal-metrics。
 ```
 
 ## 使用
