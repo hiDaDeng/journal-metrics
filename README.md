@@ -1,6 +1,6 @@
 # journal-metrics
 
-Chinese version: [README-zh.md](./README-zh.md)
+[English](./README.md) | [中文](./README-zh.md)
 
 **Journal Metrics**
 
