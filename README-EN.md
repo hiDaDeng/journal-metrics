@@ -2,10 +2,6 @@
 
 [English](./README-EN.md) | [中文](./README.md)
 
-**Journal Metrics**
-
-Journal selection often gets messy because metrics from different sources are mixed together, missing fields are guessed, and changing publisher details are treated as if they came from JCR.
-
 `journal-metrics` is a local agent skill for clean, source-bounded journal lookups. It queries bundled SQLite indexes and returns a compact table covering JIF, JCR quartiles, indexing, DOAJ records, and selected publisher submission metrics without inventing missing values.
 
 ![](journal-metricsEN.svg)
@@ -18,7 +14,7 @@ Journal selection often gets messy because metrics from different sources are mi
 
 ## Installation
 
-In an agent chat window (Codex, OpenCode, Claude Code, Kimi Code, etc.), run the following command:
+In an agent chat window (Codex/ZCode/Claude Code/OpenCode/Kimi Code, etc.), run the following command:
 
 ```text
 Install GitHub repo hiDaDeng/journal-metrics.

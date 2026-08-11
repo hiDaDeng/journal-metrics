@@ -2,10 +2,6 @@
 
 [English](./README-EN.md) | [中文](./README.md)
 
-**期刊指标**
-
-选刊指标很容易变乱：不同来源的分区和周期被混在一起，缺失字段被猜测补齐，出版集团页面上的信息也常被误当成 JCR 口径。
-
 `journal-metrics` 是一个面向智能体的本地期刊查询技能。它通过打包的 SQLite 索引返回干净、紧凑、来源边界清楚的总表，覆盖 JIF、JCR 分区、收录索引、DOAJ 信息，以及部分出版集团投稿指标，不自行补写缺失值。
 
 ![](journal-metrics.svg)
@@ -18,7 +14,7 @@
 
 ## 安装
 
-在 agent 对话框（Codex、OpenCode、Claude Code、Kimi Code 等）中执行命令：
+在 agent 对话框（Codex/ZCode/Claude Code/OpenCode/Kimi Code 等）中执行命令：
 
 ```text
 安装 GitHub 仓库 hiDaDeng/journal-metrics
