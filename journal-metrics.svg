@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">journal-metrics English legend</title>
+  <desc id="desc">Shows journal-metrics taking a journal query and returning a compact local metrics table.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f8fb; }
+      .title { fill: #182033; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-size: 42px; font-weight: 700; letter-spacing: 0; }
+      .sub { fill: #647086; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-size: 22px; font-weight: 400; letter-spacing: 0; }
+      .label { fill: #647086; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-size: 20px; font-weight: 400; letter-spacing: 0; }
+      .h { fill: #182033; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-size: 23px; font-weight: 700; letter-spacing: 0; }
+      .body { fill: #182033; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-size: 21px; font-weight: 400; letter-spacing: 0; }
+      .body-muted { fill: #647086; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-size: 20px; font-weight: 400; letter-spacing: 0; }
+      .mono { fill: #182033; font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; font-size: 20px; font-weight: 600; letter-spacing: 0; }
+      .small { fill: #647086; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-size: 18px; font-weight: 400; letter-spacing: 0; }
+      .card { fill: #ffffff; stroke: #d7dce8; stroke-width: 1.5; }
+      .input { fill: #eef4ff; stroke: #9bbcff; stroke-width: 1.7; }
+      .output { fill: #ffffff; stroke: #d7dce8; stroke-width: 1.5; }
+      .chip { fill: #f0f2f6; }
+      .line { stroke: #d7dce8; stroke-width: 1.2; }
+      .arrow { fill: none; stroke: #2687ff; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+      .guard { fill: #ffffff; stroke: #d7dce8; stroke-width: 1.3; }
+      .shadow { filter: drop-shadow(0 14px 28px rgba(31, 41, 71, .10)); }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="72" y="76">journal-metrics looks up journal metrics</text>
+  <text class="sub" x="72" y="116">Enter a journal name, ISSN, or eISSN. Get a compact local metrics table.</text>
+
+  <g class="shadow">
+    <rect class="input" x="72" y="248" width="330" height="190" rx="20"/>
+    <text class="label" x="104" y="296">User input</text>
+    <rect class="chip" x="104" y="324" width="252" height="34" rx="9"/>
+    <text class="mono" x="120" y="347">$journal-metrics</text>
+    <rect class="chip" x="104" y="364" width="226" height="34" rx="9"/>
+    <text class="mono" x="120" y="387">journal of consumer</text>
+    <rect class="chip" x="104" y="404" width="96" height="34" rx="9"/>
+    <text class="mono" x="120" y="427">research</text>
+  </g>
+
+  <path class="arrow" d="M 444 323 H 520"/>
+  <path class="arrow" d="M 498 300 L 522 323 L 498 346"/>
+  <text class="small" x="483" y="376" text-anchor="middle">local lookup</text>
+
+  <g class="shadow">
+    <rect class="output" x="560" y="150" width="568" height="470" rx="20"/>
+    <text class="label" x="600" y="196">Overview</text>
+    <text class="h" x="600" y="244">Field</text>
+    <text class="h" x="790" y="244">Value</text>
+    <line class="line" x1="600" y1="262" x2="1088" y2="262"/>
+
+    <text class="body-muted" x="600" y="296">Journal</text>
+    <text class="body" x="790" y="296">JOURNAL OF CONSUMER</text>
+    <text class="body" x="790" y="326">RESEARCH</text>
+    <line class="line" x1="600" y1="344" x2="1088" y2="344"/>
+
+    <text class="body-muted" x="600" y="378">ISSN</text>
+    <rect class="chip" x="790" y="354" width="275" height="30" rx="8"/>
+    <text class="mono" x="804" y="376">0093-5301 / 1537-5277</text>
+    <line class="line" x1="600" y1="396" x2="1088" y2="396"/>
+
+    <text class="body-muted" x="600" y="430">JIF</text>
+    <text class="h" x="790" y="430">8.1</text>
+    <line class="line" x1="600" y1="448" x2="1088" y2="448"/>
+
+    <text class="body-muted" x="600" y="482">JCR Quartile</text>
+    <text class="h" x="790" y="482">Q1</text>
+    <line class="line" x1="600" y1="500" x2="1088" y2="500"/>
+
+    <text class="body-muted" x="600" y="520">2026 Emerging Quartile</text>
+    <text class="h" x="850" y="520">Tier 1 · Management</text>
+    <line class="line" x1="600" y1="538" x2="1088" y2="538"/>
+
+    <text class="body-muted" x="600" y="570">Indexing</text>
+    <text class="body" x="790" y="570">SSCI</text>
+    <line class="line" x1="600" y1="588" x2="1088" y2="588"/>
+
+    <text class="body-muted" x="600" y="614">JCR Categories</text>
+    <text class="body" x="790" y="614">BUSINESS</text>
+  </g>
+
+  <g>
+    <rect class="guard" x="72" y="636" width="300" height="66" rx="14"/>
+    <text class="h" x="96" y="664">What it returns</text>
+    <text class="small" x="96" y="688">JIF, quartile, indexing, DOAJ, APC</text>
+
+    <rect class="guard" x="450" y="636" width="300" height="66" rx="14"/>
+    <text class="h" x="474" y="664">How it works</text>
+    <text class="small" x="474" y="688">Uses bundled local SQLite indexes</text>
+
+    <rect class="guard" x="828" y="636" width="300" height="66" rx="14"/>
+    <text class="h" x="852" y="664">What it avoids</text>
+    <text class="small" x="852" y="688">No live lookup, no quality judgment</text>
+  </g>
+</svg>

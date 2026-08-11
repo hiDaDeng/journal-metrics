@@ -4,9 +4,13 @@
 
 **Journal Metrics**
 
-A local agent skill for concise journal lookups across JIF, JCR quartiles, indexing, DOAJ, and selected publisher submission metrics.
+Journal selection often gets messy because metrics from different sources are mixed together, missing fields are guessed, and changing publisher details are treated as if they came from JCR.
 
-## Overview
+`journal-metrics` is a local agent skill for clean, source-bounded journal lookups. It queries bundled SQLite indexes and returns a compact table covering JIF, JCR quartiles, indexing, DOAJ records, and selected publisher submission metrics without inventing missing values.
+
+![](journal-metrics.svg)
+
+## Features
 
 - Query multiple local SQLite indexes through one entrypoint.
 - Return a compact table focused on the fields most relevant to journal selection.
