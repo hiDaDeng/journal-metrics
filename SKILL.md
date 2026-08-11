@@ -1,6 +1,10 @@
 ---
 name: journal-metrics
 description: 查询期刊指标。用户提供期刊名、ISSN 或 eISSN 时，汇总本地近三年 JIF、JCR 分区、JCR 学科、SCI/SCIE/SSCI/ESCI/AHCI 收录索引、2026 新锐分区等指标；也用于核对同名期刊、APC、评审方式、查重、投稿周期与集团目录排名。不要用于评价单篇论文质量或查询实时网络指标。
+metadata:
+  creator: 邓旭东
+  source: https://github.com/hiDaDeng/journal-metrics
+  updated: 2026-08-11
 ---
 
 # Journal Metrics
