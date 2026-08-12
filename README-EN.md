@@ -4,7 +4,7 @@
 
 `journal-metrics` is a local agent skill for clean, source-bounded journal lookups. It queries bundled SQLite indexes and returns a compact table covering JIF, JCR quartiles, indexing, DOAJ records, and selected publisher submission metrics without inventing missing values.
 
-![](journal-metricsEN.svg)
+![](img/journal-metricsEN.svg)
 
 ## Features
 
@@ -17,66 +17,55 @@
 In an agent chat window (Codex/ZCode/Claude Code/OpenCode/Kimi Code, etc.), run the following command:
 
 ```text
-Install GitHub repo hiDaDeng/journal-metrics.
+Please install hiDaDeng/journal-metrics for me.
+GitHub: https://github.com/hiDaDeng/journal-metrics
 ```
+
+If you prefer a terminal:
+
+```
+npx skills add hiDaDeng/journal-metrics
+```
+
 
 ## Usage
 
 Typical agent prompt:
 
 ```text
-$journal-metrics Computers in Human Behavior
+$journal-metrics Marketing Science
 ```
 
-Direct command-line usage:
+Run
 
-```bash
-python3 scripts/query.py "Computers in Human Behavior"
-python3 scripts/query.py "Computers in Human Behavior" --json
+```
+**Overview**
+
+|     Field    |       Value       |
+|--------------|-------------------|
+|   Journal    |MARKETING SCIENCE  |
+|    ISSN      |0732-2399/1526-548X|
+|     JIF      |       5.2         |
+| JCR Quartile |        Q2         |
+| 2026新锐分区  |    1 区 · 管理学    |
+|  Indexing    |       SSCI        |
+|JCR Categories|     BUSINESS      |
+
+[hiDaDeng/journal-metrics] Please re-check critical details before submission.
 ```
 
-## Output
 
-The default response is a single summary table, usually including:
-
-- Journal and ISSN
-- JIF
-- JCR Quartile
-- 2026 新锐分区
-- Indexing (`SCI` / `SCIE` / `SSCI` / `ESCI` / `AHCI`)
-- JCR Categories
-- Ranking, if locally available
-- DOAJ fields, if matched
-- Publisher metrics, if matched
-
-Status handling:
-
-- `found`: return the result directly
-- `ambiguous`: return candidates and wait for a narrower journal identity
-- `not_found`: auto-apply suggestion #1 when available; otherwise report that local data is unavailable
 
 ## Project Structure
 
 ```text
 journal-metrics/
 ├── SKILL.md
-├── README.md
-├── README-zh.md
-├── agents/
-│   └── openai.yaml
+├── agents/openai.yaml
 ├── scripts/
-│   ├── query.py
-│   ├── build_index.py
-│   ├── build_doaj.py
-│   ├── sync_publishers.py
-│   ├── sync_wiley.py
-│   └── sync_frontiers.py
 └── assets/
     ├── journal-metrics.sqlite
     ├── doaj.sqlite
-    └── publishers/
-        ├── wiley.sqlite
-        └── frontiers.sqlite
 ```
 
 ## File Guide
@@ -84,32 +73,14 @@ journal-metrics/
 - `SKILL.md`  
   Core operating instructions for the skill.
 
-- `README.md`  
-  English project overview.
-
-- `README-zh.md`  
-  Chinese project overview.
-
 - `agents/openai.yaml`  
   UI metadata for display name, short description, and default prompt.
 
 - `scripts/query.py`  
   Main query entrypoint for lookup, aggregation, and output formatting.
 
-- `scripts/build_index.py`  
-  Builds `journal-metrics.sqlite` from local JCR workbooks and the 2026 emerging-quartile workbook.
-
-- `scripts/build_doaj.py`  
-  Builds `doaj.sqlite` from an official DOAJ CSV snapshot.
-
-- `scripts/sync_wiley.py`  
-  Syncs public Wiley directory metrics.
-
-- `scripts/sync_frontiers.py`  
-  Syncs public Frontiers directory metrics.
-
-- `scripts/sync_publishers.py`  
-  Batch sync entrypoint for supported publisher datasets.
+- `scripts`  
+  Python scripts used by the skill.
 
 - `assets/journal-metrics.sqlite`  
   Main lookup database built from local JCR and emerging-quartile source tables.
@@ -117,11 +88,6 @@ journal-metrics/
 - `assets/doaj.sqlite`  
   Fast lookup database generated from the DOAJ CSV snapshot.
 
-- `assets/publishers/wiley.sqlite`  
-  Generated from public Wiley directory data.
-
-- `assets/publishers/frontiers.sqlite`  
-  Generated from public Frontiers directory data.
 
 ## Notes
 
